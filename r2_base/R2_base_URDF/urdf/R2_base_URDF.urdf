@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="r2_base">
+  <link name="base_footprint"/>
+  <link name="base_link">
+    <inertial>
+      <origin
+        xyz="8.1604240151101E-17 4.30709754794763E-17 -8.91090841652422E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.886070400000001" />
+      <inertia
+        ixx="0.005178625670228"
+        ixy="1.19866332826232E-19"
+        ixz="-1.49217713525713E-19"
+        iyy="0.00950552027690001"
+        iyz="4.0329138553523E-19"
+        izz="0.014526720772728" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2_base/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2_base/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint name="footprint_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+
+
+  <link
+    name="omni1">
+    <inertial>
+      <origin
+        xyz="-8.10670855773788E-06 0.212939101368762 1.63413011082493E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.203992670455797" />
+      <inertia
+        ixx="0.000355227270737633"
+        ixy="-9.62525667779648E-10"
+        ixz="3.332400442508E-08"
+        iyy="0.000699996786044572"
+        iyz="5.1639216301797E-09"
+        izz="0.000355203781045891" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2_base/meshes/omni1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2_base/meshes/omni1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j1"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="omni1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="omni2">
+    <inertial>
+      <origin
+        xyz="-3.32127282483082E-06 -0.212960898551053 -1.79335911258635E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.20399265789258" />
+      <inertia
+        ixx="0.000355250794692106"
+        ixy="-2.33100528224327E-09"
+        ixz="-1.96470565943066E-09"
+        iyy="0.000699996757014911"
+        iyz="-4.70745450065716E-09"
+        izz="0.000355180228790853" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2_base/meshes/omni2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2_base/meshes/omni2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j2"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="omni2" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="omni3">
+    <inertial>
+      <origin
+        xyz="0.212960898205332 -1.67070555826308E-05 -7.31036788127248E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.203992640622447" />
+      <inertia
+        ixx="0.000699996713586313"
+        ixy="5.20438906152967E-09"
+        ixz="7.13196751644893E-10"
+        iyy="0.000355200600982751"
+        iyz="-3.20451533327038E-08"
+        izz="0.000355230377949935" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2_base/meshes/omni3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2_base/meshes/omni3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j3"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="omni3" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="omni4">
+    <inertial>
+      <origin
+        xyz="-0.21293910067063 2.38576916387528E-06 -1.80806870139802E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.203992653028244" />
+      <inertia
+        ixx="0.000699996745409194"
+        ixy="7.59799429192369E-10"
+        ixz="5.19783863442149E-09"
+        iyy="0.000355245179998786"
+        iyz="1.91830336239606E-08"
+        izz="0.000355185831819154" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2_base/meshes/omni4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2_base/meshes/omni4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j4"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="omni4" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+
+  <link name="camera">
+    <inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0"
+            iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+
+    <visual>          
+      <geometry>
+        <box size="0.1 0.1 0.05"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+          <box size="0.1 0.1 0.05"/>
+      </geometry>
+    </collision>
+</link>
+
+<joint name="camera_joint" type="fixed">
+    <origin xyz="0.0 0 0.6" rpy="0.0 0.1 0.0"/>
+    <parent link="base_link"/>
+    <child link="camera"/>
+    <axis xyz="0.0 0.0 1.0"/>    
+</joint>
+
+
+<joint name="camera_joint_rot" type="fixed">
+  <parent link="camera" />
+  <child link="camera_bottom_screw_frame" />
+  <origin xyz="0 0.0 0" rpy="0 0 0" />
+</joint>
+
+<link name="camera_link_depth"></link>
+<link name="camera_bottom_screw_frame"></link>
+<link name="camera_depth_frame"></link>
+<link name="camera_depth_optical_frame"></link>
+<link name="camera_color_frame"></link>
+<link name="camera_color_optical_frame"></link>
+<link name="camera_left_ir_frame"></link>
+<link name="camera_left_ir_optical_frame"></link>
+<link name="camera_right_ir_frame"></link>
+<link name="camera_right_ir_optical_frame"></link>
+
+
+<joint name="camera_link_joint" type="fixed">
+  <parent link="camera_bottom_screw_frame" />
+  <child link="camera_link_depth" />
+  <origin xyz="0 0.0 0.0 " rpy="0 0 0" />
+</joint>
+
+<joint name="camera_depth_joint" type="fixed">
+  <parent link="camera_link_depth" />
+  <child link="camera_depth_frame" />
+  <origin xyz="0 0 0" rpy="0 0 0" />
+</joint>
+<joint name="camera_depth_optical_joint" type="fixed">
+  <parent link="camera_depth_frame" />
+  <child link="camera_depth_optical_frame" />
+  <origin xyz="0 0 0 " rpy="-1.57 0 -1.57" />
+</joint>
+<joint name="camera_color_joint" type="fixed">
+  <parent link="camera_depth_frame" />
+  <child link="camera_color_frame" />
+  <origin xyz="0 0 0" rpy="0 0 0" />
+</joint>
+<joint name="camera_color_optical_joint" type="fixed">
+  <parent link="camera_color_frame" />
+  <child link="camera_color_optical_frame" />
+  <origin xyz="0 0 0 " rpy="-1.57 0 -1.57" />
+</joint>
+<joint name="camera_left_ir_joint" type="fixed">
+  <parent link="camera_depth_frame" />
+  <child link="camera_left_ir_frame" />
+  <origin xyz="0 0 0 " rpy="0 0 0 " />
+</joint>
+<joint name="camera_left_ir_optical_joint" type="fixed">
+  <parent link="camera_left_ir_frame" />
+  <child link="camera_left_ir_optical_frame" />
+  <origin xyz="0 0 0 " rpy="-1.57 0 -1.57" />
+</joint>
+<joint name="camera_right_ir_joint" type="fixed">
+  <parent link="camera_depth_frame" />
+  <child link="camera_right_ir_frame" />
+  <origin xyz="0 -0.050 0 " rpy="0 0 0" />
+</joint>
+<joint name="camera_right_ir_optical_joint" type="fixed">
+  <parent link="camera_right_ir_frame" />
+  <child link="camera_right_ir_optical_frame" />
+  <origin xyz="0 0 0 " rpy="-1.57 0 -1.57" />
+</joint>
+
+
+<gazebo reference="camera_bottom_screw_frame"> 
+  <sensor name="cameradepth" type="depth">
+          <camera name="camera">
+              <horizontal_fov>1.2043</horizontal_fov>
+              <image>
+                  <width>1280</width>
+                  <height>720</height>
+                  <format>R8G8B8</format>
+              </image>
+              <clip>
+                  <near>0.1</near>
+                  <far>100</far>
+              </clip>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>0</visualize>
+      </sensor>
+      <sensor name="cameracolor" type="camera">
+          <camera name="camera">
+              <horizontal_fov>1.2043</horizontal_fov>
+              <image>
+                  <width>1280</width>
+                  <height>720</height>
+                  <format>RGB_INT8</format>
+              </image>
+              <clip>
+                  <near>0.1</near>
+                  <far>100</far>
+              </clip>
+              <noise>
+                  <type>gaussian</type>
+                  <mean>0.0</mean>
+                  <stddev>0.007</stddev>
+              </noise>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>0</visualize>
+      </sensor>
+      <sensor name="cameraired1" type="camera">
+          <camera name="camera">
+              <horizontal_fov>1.2043</horizontal_fov>
+              <image>
+                  <width>1280</width>
+                  <height>720</height>
+                  <format>L_INT8</format>
+              </image>
+              <clip>
+                  <near>0.1</near>
+                  <far>100</far>
+              </clip>
+              <noise>
+                  <type>gaussian</type>
+                  <mean>0.0</mean>
+                  <stddev>0.05</stddev>
+              </noise>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>1</update_rate>
+          <visualize>0</visualize>
+      </sensor>
+      <sensor name="cameraired2" type="camera">
+          <camera name="camera">
+              <horizontal_fov>1.2043</horizontal_fov>
+              <image>
+                  <width>1280</width>
+                  <height>720</height>
+                  <format>L_INT8</format>
+              </image>
+              <clip>
+                  <near>0.1</near>
+                  <far>100</far>
+              </clip>
+              <noise>
+                  <type>gaussian</type>
+                  <mean>0.0</mean>
+                  <stddev>0.05</stddev>
+              </noise>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>1</update_rate>
+          <visualize>0</visualize>
+      </sensor>
+
+
+</gazebo>
+
+
+
+  <gazebo>
+    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>zed2i/zed_node/odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>20.0</odometryRate>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="zed2i" filename="librealsense_gazebo_plugin.so">
+          <prefix>camera</prefix>
+          <depthUpdateRate>15.0</depthUpdateRate>
+          <colorUpdateRate>15.0</colorUpdateRate>
+          <infraredUpdateRate>15.0</infraredUpdateRate>
+          <depthTopicName>zed_node/depth/depth_registered</depthTopicName>
+          <depthCameraInfoTopicName>zed_node/depth/camera_info</depthCameraInfoTopicName>
+          <colorTopicName>zed_node/rgb/image_rect_color</colorTopicName>
+          <colorCameraInfoTopicName>zed_node/rgb/camera_info</colorCameraInfoTopicName>
+          <infrared1TopicName>infra1/image_raw</infrared1TopicName>
+          <infrared1CameraInfoTopicName>infra1/camera_info</infrared1CameraInfoTopicName>
+          <infrared2TopicName>infra2/image_raw</infrared2TopicName>
+          <infrared2CameraInfoTopicName>infra2/camera_info</infrared2CameraInfoTopicName>
+          <colorOpticalframeName>camera_color_optical_frame</colorOpticalframeName>
+          <depthOpticalframeName>camera_depth_optical_frame</depthOpticalframeName>
+          <infrared1OpticalframeName>camera_left_ir_optical_frame</infrared1OpticalframeName>
+          <infrared2OpticalframeName>camera_right_ir_optical_frame</infrared2OpticalframeName>
+          <rangeMinDepth>0.1</rangeMinDepth>
+          <rangeMaxDepth>10.0</rangeMaxDepth>
+          <pointCloud>true</pointCloud>
+          <pointCloudTopicName>depth/color/points</pointCloudTopicName>
+          <pointCloudCutoff>0.1</pointCloudCutoff>
+          <pointCloudCutoffMax>10</pointCloudCutoffMax>
+    </plugin>
+
+    </gazebo>
+
+</robot>

@@ -1,0 +1,32 @@
+<!-- FILEPATH: /home/tarun/catkin_ws/src/holo_slam/launch/three_wheeled_robot.launch -->
+
+<launch>
+
+
+
+    <!-- Launch Gazebo -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+
+    <!-- Load URDF model -->
+    <arg name="urdf_file" default="$(find r2_base)/urdf/R2_base_URDF.urdf"/>
+    <param name="robot_description" textfile="$(find r2_base)/urdf/R2_base_URDF.urdf"/>
+    <param name="field_description" textfile="$(find holo_slam)/urdf_files/model_editor_models/model.sdf"/>
+    <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="30.0" />
+    </node>
+
+
+    <!-- Spawn robot in Gazebo -->
+    <!-- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model r2_base -param robot_description -x 0 -y 0 -z 0"/> -->
+
+    <node name="spawn_urdf2" pkg="gazebo_ros" type="spawn_model" args="-sdf -model model -param field_description -x 0 -y 0 -z 0"/>
+
+
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+    <!-- Launch RViz -->
+    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find holo_slam)/rviz/urdf.rviz"/> -->
+
+</launch>
